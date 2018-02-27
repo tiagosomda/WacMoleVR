@@ -34,6 +34,7 @@ public class MoleHole : MonoBehaviour {
 		duration = speed;
 		mole.canHit = true;
 		isShowing = true;
+		mole.SetColor(mole.normalColor);
 		StartCoroutine(GoToTarget());
 	}
 	public void Hide()
