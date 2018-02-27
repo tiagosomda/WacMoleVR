@@ -32,12 +32,14 @@ public class MoleHole : MonoBehaviour {
 		StopCoroutine(GoToTarget());
 		targetPos = showPos;
 		duration = speed;
+		mole.canHit = true;
 		isShowing = true;
 		StartCoroutine(GoToTarget());
 	}
 	public void Hide()
 	{
 		StopCoroutine(GoToTarget());
+		mole.canHit = false;
 		targetPos = hiddenPos;
 		duration = 0.1f;
 		isShowing = false;
@@ -54,7 +56,6 @@ public class MoleHole : MonoBehaviour {
 			mole.transform.localPosition = Vector3.Lerp(start, targetPos, t);
 			yield return new WaitForEndOfFrame();
 		}
-
 
 		if(isShowing)
 		{
