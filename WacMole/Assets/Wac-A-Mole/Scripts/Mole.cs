@@ -6,6 +6,7 @@ public class Mole : MonoBehaviour {
 
 	public Color normalColor;
 	public Color hitColor;
+	public int points = 10;
 	public int index;
 	public bool canHit;
 	MoleSpawner spawner;
@@ -39,7 +40,7 @@ public class Mole : MonoBehaviour {
 
 			audioSource.Play();
 			spawner.ReturnMole(index);
-			spawner.AddScore(10);
+			spawner.AddScore(points);
 		}
 	}
 }
